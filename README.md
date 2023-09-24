@@ -1,27 +1,25 @@
 # Crowdfunding_ETL
 Group 8 project 2.
 Group Members: Arnold Reynoso, Gabriela Delgado, Kyle Dalton, Naseema Omer. 
-For the ETL mini project, you will work with a partner to practice building an ETL pipeline using Python, Pandas, and either Python dictionary methods or regular expressions to extract and transform the data. After you transform the data, you'll create four CSV files and use the CSV file data to create an ERD and a table schema. Finally, you’ll upload the CSV file data into a Postgres database.
-Since this is a one-week project, make sure that you have done at least half of your project before the third day of class to stay on track.
-Although you and your partner will divide the work, it’s essential to collaborate and communicate while working on different parts of the project. Be sure to check in with your partner regularly and offer support.
+References used to research and create content were Stack Overflow and Beekeeper IO as well as Instuctor, TA's and Tutors.
 
-References used to research and create content were Stack Overflow and Beekeeper IO as well as Instuctor, TA's and Tutors. 
-Files
-Download the starter code and files to help you get started:
-Project 2 ETL filesLinks to an external site.
-Before You Begin
-1.	Have one member of your group create a new repository, named Crowdfunding_ETL, for this project. Add your partner as a collaborator. Do not add this project to an existing repository.
-2.	Clone the new repository to your computer.
-3.	Have one person rename the ETL_Mini_Project_starter_code.ipynb file with the first name initial and last name of each member of the group, for example, ETL_Mini_Project_NRomanoff_JSmith.ipynb. Then, add this Jupyter notebook file and the Resources folder containing the crowdfunding.xlsx and the contacts.xlsx files to your repository.
-4.	Push the changes to GitHub.
-5.	Have your partner pull the changes, so both of you have the same notebook available on your computer.
-6.	As you work through the project deliverables, you may find it helpful to break up the work across other notebooks that you each work on individually. However, once complete, please combine all the subsections back into the final ETL_Mini_Project notebook.
-Instructions
+This group ETL mini project is practice in building an ETL pipeline using Python, Pandas, and either Python dictionary methods or regular expressions to extract and transform the data. 
+Starter code and resource files provided.  Project Instructions and details below. 
+Jupyter notebook used to build dataframes using the two resource files, and generate the output four CSV files saved in the Resources folder.
+CSV file data is used to create an ERD and a table schema. The ERD image and schema.sql file are saved. 
+Database and tables created in Postgres, and data from the CSV files imported into the Postgres database.
+
+Project Instructions & Details:
+A new Github repository created for this project named Crowdfunding_ETL. Group members added. Do not add this project to an existing repository.
+Clone the new repository to your computer.
+Starter code renamed: ETL_Mini_Project2_Group8.ipynb File and Resources folder containing the crowdfunding.xlsx and the contacts.xlsx files added to the repository.
+
 The instructions for this mini project are divided into the following subsections:
 •	Create the Category and Subcategory DataFrames
 •	Create the Campaign DataFrame
 •	Create the Contacts DataFrame
 •	Create the Crowdfunding Database
+
 Create the Category and Subcategory DataFrames
 1.	Extract and transform the crowdfunding.xlsx Excel data to create a category DataFrame that has the following columns:
 o	A "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories
@@ -86,6 +84,7 @@ Note: Remember to specify the data types, primary keys, foreign keys, and other 
 6.	Verify the table creation by running a SELECT statement for each table.
 7.	Import each CSV file into its corresponding SQL table.
 8.	Verify that each table has the correct data by running a SELECT statement for each.
+   
 Hints
 •	To split each "category & sub-category" column value into "category" and "subcategory" column values, use df[["new_column1","new_column2"]] = df["column"].str.split(). Make sure to pass the correct parameters to the split() function.
 •	To get the unique category and subcategory values from the "category" and "subcategory" columns, create a NumPy array where the array length equals the number of unique categories and unique subcategories from each column. For information about how to do so, see numpy.arangeLinks to an external site. in the NumPy documentation.
@@ -94,19 +93,20 @@ Hints
 •	To convert the "goal" and "pledged" columns to the float data type, use the astype() method.
 •	To convert the "launch_date" and "end_date" UTC times to the datetime format, see the Transform_Grocery_Orders_Solved.ipynb activity solution.
 •	For more information about how to add the "category_id" and "subcategory_id" unique identification numbers to the campaign DataFrame, see the pandas.DataFrame.mergeLinks to an external site. in the Pandas documentation.
+
 Support and Resources
 Your instructional team will provide support during classes and office hours. You will also have access to learning assistants and tutors to help you with topics as needed. Make sure to take advantage of these resources as you collaborate with your partner on this project.
 Requirements
-A Category DataFrame is Created (15 points)
-•	The DataFrame contains a "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories (5 points)
-•	The DataFrame has a "category" column that contains only the category titles (5 points)
-•	The category DataFrame is exported as category.csv (5 points)
-A Subcategory DataFrame is Created (15 points)
-•	The DataFrame contains a "subcategory_id" column that has entries going sequentially from "subcat1" to "subcatn", where n is the number of unique subcategories (5 points)
-•	The DataFrame contains a "subcategory" column that contains only the subcategory titles (5 points)
-•	The subcategory DataFrame is exported as subcategory.csv (5 points)
-A Campaign DataFrame is Created (30 points)
-•	The DataFrame has the following columns: (25 points)
+A Category DataFrame is Created 
+•	The DataFrame contains a "category_id" column that has entries going sequentially from "cat1" to "catn", where n is the number of unique categories 
+•	The DataFrame has a "category" column that contains only the category titles 
+•	The category DataFrame is exported as category.csv 
+A Subcategory DataFrame is Created 
+•	The DataFrame contains a "subcategory_id" column that has entries going sequentially from "subcat1" to "subcatn", where n is the number of unique subcategories 
+•	The DataFrame contains a "subcategory" column that contains only the subcategory titles 
+•	The subcategory DataFrame is exported as subcategory.csv 
+A Campaign DataFrame is Created 
+•	The DataFrame has the following columns: 
 o	A "cf_id" column
 o	A "contact_id" column
 o	A "company_name" column
@@ -121,30 +121,18 @@ o	A "launch_date" with the time formatted as "YYYY-MM-DD"
 o	An "end_date" with the time formatted as "YYYY-MM-DD"
 o	A "category_id" column that contains the unique identification numbers matching those in the "category_id" column of the category DataFrame
 o	A "subcategory_id" column that contains the unique identification numbers matching those in the "subcategory_id" column of the subcategory DataFrame
-•	The campaign DataFrame is exported as campaign.csv (5 points)
-A Contacts DataFrame is Created (15 points)
-•	The DataFrame has the following columns: (10 points)
+•	The campaign DataFrame is exported as campaign.csv 
+A Contacts DataFrame is Created 
+•	The DataFrame has the following columns: 
 o	A "contact_id" column
 o	A "first_name" column
 o	A "last_name" column
 o	An "email" column
-•	The contacts DataFrame is exported as contacts.csv (5 points)
-A Crowdfunding Database is Created (25 points)
-•	A database schema labeled, crowdfunding_db_schema.sql is created (5 points)
-•	A crowdfunding_db is created using the crowdfunding_db_schema.sql file (5 points)
-•	The database has the appropriate primary and foreign keys and relationships (5 points)
-•	Each CSV file is imported into the appropriate table without errors (5 points)
-•	The data from each table is displayed using a SELECT * statement (5 points)
-This project will be evaluated against the requirements and assigned a grade according to the following table:
-Grade	Points
-A (+/-)	90+
-B (+/-)	80–89
-C (+/-)	70–79
-D (+/-)	60–69
-F (+/-)	< 60
-Submission
-You are required to submit the URL of your GitHub repository for grading.
-NOTE
-Projects are requirements for graduation. While you are allowed to miss up to two Challenge assignments and still earn your certificate, projects cannot be skipped.
-References
-Data for this dataset was generated by edX Boot Camps LLC, and is intended for educational purposes only.
+•	The contacts DataFrame is exported as contacts.csv 
+A Crowdfunding Database is Created 
+•	A database schema labeled, crowdfunding_db_schema.sql is created 
+•	A crowdfunding_db is created using the crowdfunding_db_schema.sql file 
+•	The database has the appropriate primary and foreign keys and relationships 
+•	Each CSV file is imported into the appropriate table without errors 
+•	The data from each table is displayed using a SELECT * statement 
+
