@@ -4,7 +4,7 @@ Group Members: Arnold Reynoso, Gabriela Delgado, Kyle Dalton, Naseema Omer.
 References used to research and create content were Stack Overflow and Beekeeper IO as well as Instuctor, TA's and Tutors.
 
 This group ETL mini project is practice in building an ETL pipeline using Python, Pandas, and either Python dictionary methods or regular expressions to extract and transform the data. 
-Starter code and resource files provided.  Project Instructions and details below. 
+Starter code and two resource xlsx files provided.  Project Instructions and details below. 
 Jupyter notebook used to build dataframes using the two resource files, and generate the output four CSV files saved in the Resources folder.
 CSV file data is used to create an ERD and a table schema. The ERD image and schema.sql file are saved. 
 Database and tables created in Postgres, and data from the CSV files imported into the Postgres database.
